@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Invalid input. Please try again.')
         } else {
-            callback(undefined, body.daily.data[0].summary + 'It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability + '% chance of rain.')
+            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees fahrenheit out. The highest and lowest temperatures today will be around ' + body.daily.data[0].temperatureHigh + ' and ' + body.daily.data[0].temperatureLow + ' degrees fahrenheit. There is a ' + body.currently.precipProbability + '% chance of rain.')
         }
     })
 }
